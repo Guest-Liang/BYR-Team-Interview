@@ -24,5 +24,6 @@ curl 127.0.0.1:1323/api/validate -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsI
     "200":"OK",
     "401":"invalid or expired jwt",
     "403":"forbidden",
+    "405":"Method not allowed",
     "502":"Bad Gateway"
 }
