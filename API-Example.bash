@@ -22,8 +22,10 @@ curl 127.0.0.1:1323/api/validate -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsI
 # 需要处理的状态码：试出来的，没试出来暂时不管（
 {
     "200":"OK",
-    "401":"invalid or expired jwt",
+    "401":"[missing or malformed jwt] or [invalid or expired jwt] or [Unauthorized]",
     "403":"forbidden",
+    "404":"Not Found",
     "405":"Method not allowed",
+    "418":"NOPE",
     "502":"Bad Gateway"
 }
