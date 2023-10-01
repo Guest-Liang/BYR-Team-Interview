@@ -3,6 +3,8 @@ import time
 
 Url = "http://127.0.0.1:1323"
 Token = None
+LastLoginTime = None
+WaitTimeAfter401 = 15
 
 # 登录
 def Login():
@@ -90,8 +92,11 @@ def HandleError(response):
         if "missing or malformed jwt" in ErrorMessage: # 没加上bearer前缀会出现的
             print("JWT is missing or malformed")
         elif "invalid or expired jwt" in ErrorMessage:
-            print(f"{StatusCode}: JWT is invalid or expired, refreshing token...")
-            Login()  # 重新获取令牌
+            print(f"{StatusCode}: JWT is invalid or expired")
+            if LastLoginTime is None or (time.time() - LastLoginTime > WaitTimeAfter401):
+                Login()  # 重新获取令牌
+            else:
+                time.sleep(WaitTimeAfter401 - (time.time() - LastLoginTime))  # 等待一段时间
     elif StatusCode == 403:
         print(f"{StatusCode}: Forbidden")
     elif StatusCode == 404:
@@ -111,7 +116,7 @@ if __name__ == "__main__":
     Login()  # 初始登录一次
     LastCode = None
     StartTime = time.time()
-    while time.time() - StartTime < 300: # 5分钟，不能再多了（
+    while time.time() - StartTime < 300: # 5分钟
         HeartBeat()  # 更新Token
         Code = getCode()  # 获取要提交的Code
         if Code and Code != LastCode: # 有更新才提交
