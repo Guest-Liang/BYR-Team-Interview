@@ -1,0 +1,1667 @@
+2023-10-02T14:14:32.066419+0800 | INFO | Received password: ef83af4d09
+2023-10-02T14:14:32.068928+0800 | INFO | Get token successfully: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzI5Mn0.dXIUt7ZYHi0HFnXK2fe3wBxj5a49e7vy52oPQHLwKec
+2023-10-02T14:14:32.072351+0800 | INFO | Received code: 32c1dc2685
+2023-10-02T14:14:32.074296+0800 | INFO | Validation successful. Server response: "OK"
+
+2023-10-02T14:14:37.076993+0800 | INFO | Token refreshed: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzI5N30.CdnQXkZ7jz2OfD93lJVSw-Zf4I7rskPHWjHbQUdWAaU
+2023-10-02T14:14:37.078731+0800 | INFO | Received code: 32c1dc2685
+2023-10-02T14:14:37.079546+0800 | INFO | Code didn't change, waiting 5s...
+2023-10-02T14:14:42.082838+0800 | ERROR | 401: JWT is invalid or expired
+2023-10-02T14:14:42.084375+0800 | INFO | Received password: 8515b1e694
+2023-10-02T14:14:42.086659+0800 | INFO | Get token successfully: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzMwMn0.1Kw3Cs-rW_L_3zfkL3RYKyBbqY6S__-a0SHaV23-RPc
+2023-10-02T14:14:42.087716+0800 | INFO | Received code: 32c1dc2685
+2023-10-02T14:14:42.088718+0800 | INFO | Code didn't change, waiting 5s...
+2023-10-02T14:14:47.090836+0800 | INFO | Token refreshed: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzMwN30.q-MNhVei9M9ymwCxA4pcnWuZkURUnxFYBkYl9qJJ3XA
+2023-10-02T14:14:47.092736+0800 | INFO | Received code: 32c1dc2685
+2023-10-02T14:14:47.093354+0800 | INFO | Code didn't change, waiting 5s...
+2023-10-02T14:14:54.119634+0800 | ERROR | Connection error: HTTPConnectionPool(host='127.0.0.1', port=1323): Max retries exceeded with url: /api/heartbeat (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE1142D0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+Traceback (most recent call last):
+
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 203, in _new_conn
+    sock = connection.create_connection(
+           │          └ <function create_connection at 0x0000029ECA608C20>
+           └ <module 'urllib3.util.connection' from 'C:\\Users\\three\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\ur...
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    raise err
+          └ None
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+    │    │       └ ('127.0.0.1', 1323)
+    │    └ <method 'connect' of '_socket.socket' objects>
+    └ <socket.socket [closed] fd=-1, family=2, type=1, proto=0>
+
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+               │    └ <function HTTPConnectionPool._make_request at 0x0000029ECC2A9580>
+               └ <urllib3.connectionpool.HTTPConnectionPool object at 0x0000029ECE114410>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 496, in _make_request
+    conn.request(
+    │    └ <function HTTPConnection.request at 0x0000029ECC2796C0>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE1142D0>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 395, in request
+    self.endheaders()
+    │    └ <function HTTPConnection.endheaders at 0x0000029ECA5899E0>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE1142D0>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 1281, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    │    │            │                            └ False
+    │    │            └ None
+    │    └ <function HTTPConnection._send_output at 0x0000029ECA589580>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE1142D0>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 1041, in _send_output
+    self.send(msg)
+    │    │    └ b'GET /api/heartbeat HTTP/1.1\r\nHost: 127.0.0.1:1323\r\nUser-Agent: python-requests/2.31.0\r\nAccept-Encoding: gzip, deflate...
+    │    └ <function HTTPConnection.send at 0x0000029ECA5893A0>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE1142D0>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 979, in send
+    self.connect()
+    │    └ <function HTTPConnection.connect at 0x0000029ECC279260>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE1142D0>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 243, in connect
+    self.sock = self._new_conn()
+    │    │      │    └ <function HTTPConnection._new_conn at 0x0000029ECC279120>
+    │    │      └ <urllib3.connection.HTTPConnection object at 0x0000029ECE1142D0>
+    │    └ None
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE1142D0>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 218, in _new_conn
+    raise NewConnectionError(
+          └ <class 'urllib3.exceptions.NewConnectionError'>
+
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x0000029ECE1142D0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\adapters.py", line 486, in send
+    resp = conn.urlopen(
+           │    └ <function HTTPConnectionPool.urlopen at 0x0000029ECC2A9760>
+           └ <urllib3.connectionpool.HTTPConnectionPool object at 0x0000029ECE114410>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 844, in urlopen
+    retries = retries.increment(
+              │       └ <function Retry.increment at 0x0000029ECA60B920>
+              └ Retry(total=0, connect=None, read=False, redirect=None, status=None)
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+          │             │      │    │            └ NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE1142D0>: Failed to establish a new connection: [...
+          │             │      │    └ NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE1142D0>: Failed to establish a new connection: [...
+          │             │      └ '/api/heartbeat'
+          │             └ <urllib3.connectionpool.HTTPConnectionPool object at 0x0000029ECE114410>
+          └ <class 'urllib3.exceptions.MaxRetryError'>
+
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=1323): Max retries exceeded with url: /api/heartbeat (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE1142D0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "d:\files\VSCode\BYR-Team-Interview\Function.py", line 150, in <module>
+    HeartBeat()  # 更新Token
+    └ <function HeartBeat at 0x0000029ECE0EF060>
+
+> File "d:\files\VSCode\BYR-Team-Interview\Function.py", line 47, in HeartBeat
+    response = requests.get(f"{Url}/api/heartbeat", headers=headers)
+               │        │                                   └ {'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzMwN30.q-MNhVei9M...
+               │        └ <function get at 0x0000029ECC4CE5C0>
+               └ <module 'requests' from 'C:\\Users\\three\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\requests\\__init_...
+
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           │              │           │         └ {'headers': {'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzMwN3...
+           │              │           └ None
+           │              └ 'http://127.0.0.1:1323/api/heartbeat'
+           └ <function request at 0x0000029ECC4CE480>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           │       │              │           │      └ {'params': None, 'headers': {'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cC...
+           │       │              │           └ 'http://127.0.0.1:1323/api/heartbeat'
+           │       │              └ 'get'
+           │       └ <function Session.request at 0x0000029ECC508540>
+           └ <requests.sessions.Session object at 0x0000029ECE102C90>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           │    │    │       └ {'timeout': None, 'allow_redirects': True, 'proxies': OrderedDict(), 'stream': False, 'verify': True, 'cert': None}
+           │    │    └ <PreparedRequest [GET]>
+           │    └ <function Session.send at 0x0000029ECC508A40>
+           └ <requests.sessions.Session object at 0x0000029ECE102C90>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        │       │    │          └ {'timeout': None, 'proxies': OrderedDict(), 'stream': False, 'verify': True, 'cert': None}
+        │       │    └ <PreparedRequest [GET]>
+        │       └ <function HTTPAdapter.send at 0x0000029ECC4EFD80>
+        └ <requests.adapters.HTTPAdapter object at 0x0000029ECE10BB10>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+          │                          └ <PreparedRequest [GET]>
+          └ <class 'requests.exceptions.ConnectionError'>
+
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=1323): Max retries exceeded with url: /api/heartbeat (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE1142D0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+2023-10-02T14:14:54.139332+0800 | INFO | Waiting 2s...
+2023-10-02T14:14:58.191374+0800 | ERROR | Connection error: HTTPConnectionPool(host='127.0.0.1', port=1323): Max retries exceeded with url: /api/info (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE159190>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+Traceback (most recent call last):
+
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 203, in _new_conn
+    sock = connection.create_connection(
+           │          └ <function create_connection at 0x0000029ECA608C20>
+           └ <module 'urllib3.util.connection' from 'C:\\Users\\three\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\ur...
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    raise err
+          └ None
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+    │    │       └ ('127.0.0.1', 1323)
+    │    └ <method 'connect' of '_socket.socket' objects>
+    └ <socket.socket [closed] fd=-1, family=2, type=1, proto=0>
+
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+               │    └ <function HTTPConnectionPool._make_request at 0x0000029ECC2A9580>
+               └ <urllib3.connectionpool.HTTPConnectionPool object at 0x0000029ECE158490>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 496, in _make_request
+    conn.request(
+    │    └ <function HTTPConnection.request at 0x0000029ECC2796C0>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE159190>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 395, in request
+    self.endheaders()
+    │    └ <function HTTPConnection.endheaders at 0x0000029ECA5899E0>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE159190>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 1281, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    │    │            │                            └ False
+    │    │            └ None
+    │    └ <function HTTPConnection._send_output at 0x0000029ECA589580>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE159190>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 1041, in _send_output
+    self.send(msg)
+    │    │    └ b'GET /api/info HTTP/1.1\r\nHost: 127.0.0.1:1323\r\nUser-Agent: python-requests/2.31.0\r\nAccept-Encoding: gzip, deflate\r\nA...
+    │    └ <function HTTPConnection.send at 0x0000029ECA5893A0>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE159190>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 979, in send
+    self.connect()
+    │    └ <function HTTPConnection.connect at 0x0000029ECC279260>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE159190>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 243, in connect
+    self.sock = self._new_conn()
+    │    │      │    └ <function HTTPConnection._new_conn at 0x0000029ECC279120>
+    │    │      └ <urllib3.connection.HTTPConnection object at 0x0000029ECE159190>
+    │    └ None
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE159190>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 218, in _new_conn
+    raise NewConnectionError(
+          └ <class 'urllib3.exceptions.NewConnectionError'>
+
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x0000029ECE159190>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\adapters.py", line 486, in send
+    resp = conn.urlopen(
+           │    └ <function HTTPConnectionPool.urlopen at 0x0000029ECC2A9760>
+           └ <urllib3.connectionpool.HTTPConnectionPool object at 0x0000029ECE158490>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 844, in urlopen
+    retries = retries.increment(
+              │       └ <function Retry.increment at 0x0000029ECA60B920>
+              └ Retry(total=0, connect=None, read=False, redirect=None, status=None)
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+          │             │      │    │            └ NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE159190>: Failed to establish a new connection: [...
+          │             │      │    └ NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE159190>: Failed to establish a new connection: [...
+          │             │      └ '/api/info'
+          │             └ <urllib3.connectionpool.HTTPConnectionPool object at 0x0000029ECE158490>
+          └ <class 'urllib3.exceptions.MaxRetryError'>
+
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=1323): Max retries exceeded with url: /api/info (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE159190>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "d:\files\VSCode\BYR-Team-Interview\Function.py", line 151, in <module>
+    Code = getCode()  # 获取要提交的Code
+           └ <function getCode at 0x0000029ECE0EF100>
+
+> File "d:\files\VSCode\BYR-Team-Interview\Function.py", line 70, in getCode
+    response = requests.get(f"{Url}/api/info", headers=headers)
+               │        │                              └ {'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzMwN30.q-MNhVei9M...
+               │        └ <function get at 0x0000029ECC4CE5C0>
+               └ <module 'requests' from 'C:\\Users\\three\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\requests\\__init_...
+
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           │              │           │         └ {'headers': {'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzMwN3...
+           │              │           └ None
+           │              └ 'http://127.0.0.1:1323/api/info'
+           └ <function request at 0x0000029ECC4CE480>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           │       │              │           │      └ {'params': None, 'headers': {'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cC...
+           │       │              │           └ 'http://127.0.0.1:1323/api/info'
+           │       │              └ 'get'
+           │       └ <function Session.request at 0x0000029ECC508540>
+           └ <requests.sessions.Session object at 0x0000029ECE152D10>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           │    │    │       └ {'timeout': None, 'allow_redirects': True, 'proxies': OrderedDict(), 'stream': False, 'verify': True, 'cert': None}
+           │    │    └ <PreparedRequest [GET]>
+           │    └ <function Session.send at 0x0000029ECC508A40>
+           └ <requests.sessions.Session object at 0x0000029ECE152D10>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        │       │    │          └ {'timeout': None, 'proxies': OrderedDict(), 'stream': False, 'verify': True, 'cert': None}
+        │       │    └ <PreparedRequest [GET]>
+        │       └ <function HTTPAdapter.send at 0x0000029ECC4EFD80>
+        └ <requests.adapters.HTTPAdapter object at 0x0000029ECE155B90>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+          │                          └ <PreparedRequest [GET]>
+          └ <class 'requests.exceptions.ConnectionError'>
+
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=1323): Max retries exceeded with url: /api/info (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE159190>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+2023-10-02T14:14:58.207824+0800 | INFO | Waiting 2s...
+2023-10-02T14:15:00.208980+0800 | INFO | Code didn't change, waiting 5s...
+2023-10-02T14:15:05.211087+0800 | ERROR | 401: JWT is invalid or expired
+2023-10-02T14:15:05.212649+0800 | INFO | Received password: 86f07b50e9
+2023-10-02T14:15:05.214068+0800 | INFO | Get token successfully: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzMyNX0.-0YPI2qACFP7o6KZk9ype4pycL1V39PJGkOv_KwebMM
+2023-10-02T14:15:05.215873+0800 | INFO | Received code: bfe52051e9
+2023-10-02T14:15:05.217217+0800 | INFO | Validation successful. Server response: "OK"
+
+2023-10-02T14:15:10.219225+0800 | ERROR | 401: JWT is invalid or expired
+2023-10-02T14:15:10.220793+0800 | INFO | Received password: 8667902a0d
+2023-10-02T14:15:10.222036+0800 | INFO | Get token successfully: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzMzMH0.fLCru6f2U_-VgCzLpD3xhboQTBdKboZlZzYRjnxpKlc
+2023-10-02T14:15:10.223562+0800 | INFO | Received code: bfe52051e9
+2023-10-02T14:15:10.224065+0800 | INFO | Code didn't change, waiting 5s...
+2023-10-02T14:15:15.225899+0800 | INFO | Token refreshed: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzMzNX0.oZGexQb4Pzniy6uOT8YHnn2euP51jc_Ltt-0YSZAi5Q
+2023-10-02T14:15:15.227673+0800 | INFO | Received code: bfe52051e9
+2023-10-02T14:15:15.228300+0800 | INFO | Code didn't change, waiting 5s...
+2023-10-02T14:15:20.230346+0800 | ERROR | 401: JWT is invalid or expired
+2023-10-02T14:15:20.232138+0800 | INFO | Received password: 0214eaa017
+2023-10-02T14:15:20.233356+0800 | INFO | Get token successfully: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzM0MH0.l-olvdFbJdQGYflp8GNLzGIUSrNZQqlhjMTrztyNmLY
+2023-10-02T14:15:20.235024+0800 | INFO | Received code: bfe52051e9
+2023-10-02T14:15:20.235528+0800 | INFO | Code didn't change, waiting 5s...
+2023-10-02T14:15:25.238307+0800 | INFO | Token refreshed: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzM0NX0.MqU2HCXZXipl8wRCcn7F1Y7ij0d6VwdUUZ4YBZZpTi8
+2023-10-02T14:15:25.239980+0800 | INFO | Received code: bfe52051e9
+2023-10-02T14:15:25.240659+0800 | INFO | Code didn't change, waiting 5s...
+2023-10-02T14:15:30.242627+0800 | ERROR | 401: JWT is invalid or expired
+2023-10-02T14:15:30.244268+0800 | INFO | Received password: a6c0317b17
+2023-10-02T14:15:30.245782+0800 | INFO | Get token successfully: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzM1MH0.Eo8NOzja6slPO1CLpZ5vGySxDSwwq51Eq3j0iawd1CU
+2023-10-02T14:15:30.247388+0800 | INFO | Received code: ae3dccaaee
+2023-10-02T14:15:30.248972+0800 | INFO | Validation successful. Server response: "OK"
+
+2023-10-02T14:15:35.251756+0800 | INFO | Token refreshed: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzM1NX0.lU4I-UlI5FTabejvTI5eLY3qLm8zqR1_6ejlIqt37r4
+2023-10-02T14:15:35.253498+0800 | INFO | Received code: ae3dccaaee
+2023-10-02T14:15:35.254108+0800 | INFO | Code didn't change, waiting 5s...
+2023-10-02T14:15:40.255881+0800 | ERROR | 502: Bad Gateway
+2023-10-02T14:15:40.258385+0800 | ERROR | 502: Bad Gateway
+2023-10-02T14:15:40.258996+0800 | INFO | Code didn't change, waiting 5s...
+2023-10-02T14:15:45.260730+0800 | ERROR | 502: Bad Gateway
+2023-10-02T14:15:45.262606+0800 | ERROR | 502: Bad Gateway
+2023-10-02T14:15:45.263400+0800 | INFO | Code didn't change, waiting 5s...
+2023-10-02T14:15:50.265311+0800 | INFO | Token refreshed: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzM3MH0.YFTdb34P9e3qdXx2xj61AT2tIRFFgMuFId4RUO7OxL0
+2023-10-02T14:15:50.267327+0800 | INFO | Received code: ae3dccaaee
+2023-10-02T14:15:50.267906+0800 | INFO | Code didn't change, waiting 5s...
+2023-10-02T14:15:55.269723+0800 | INFO | Token refreshed: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzM3NX0.6u4hE9o3pqQFe9qDgAYDZgKc4o0xj0RFcwG3Dl20sqE
+2023-10-02T14:15:55.271765+0800 | INFO | Received code: ae3dccaaee
+2023-10-02T14:15:55.272493+0800 | INFO | Code didn't change, waiting 5s...
+2023-10-02T14:16:02.316584+0800 | ERROR | Connection error: HTTPConnectionPool(host='127.0.0.1', port=1323): Max retries exceeded with url: /api/heartbeat (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE15F710>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+Traceback (most recent call last):
+
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 203, in _new_conn
+    sock = connection.create_connection(
+           │          └ <function create_connection at 0x0000029ECA608C20>
+           └ <module 'urllib3.util.connection' from 'C:\\Users\\three\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\ur...
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    raise err
+          └ None
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+    │    │       └ ('127.0.0.1', 1323)
+    │    └ <method 'connect' of '_socket.socket' objects>
+    └ <socket.socket [closed] fd=-1, family=2, type=1, proto=0>
+
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+               │    └ <function HTTPConnectionPool._make_request at 0x0000029ECC2A9580>
+               └ <urllib3.connectionpool.HTTPConnectionPool object at 0x0000029ECE15F050>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 496, in _make_request
+    conn.request(
+    │    └ <function HTTPConnection.request at 0x0000029ECC2796C0>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE15F710>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 395, in request
+    self.endheaders()
+    │    └ <function HTTPConnection.endheaders at 0x0000029ECA5899E0>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE15F710>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 1281, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    │    │            │                            └ False
+    │    │            └ None
+    │    └ <function HTTPConnection._send_output at 0x0000029ECA589580>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE15F710>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 1041, in _send_output
+    self.send(msg)
+    │    │    └ b'GET /api/heartbeat HTTP/1.1\r\nHost: 127.0.0.1:1323\r\nUser-Agent: python-requests/2.31.0\r\nAccept-Encoding: gzip, deflate...
+    │    └ <function HTTPConnection.send at 0x0000029ECA5893A0>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE15F710>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 979, in send
+    self.connect()
+    │    └ <function HTTPConnection.connect at 0x0000029ECC279260>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE15F710>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 243, in connect
+    self.sock = self._new_conn()
+    │    │      │    └ <function HTTPConnection._new_conn at 0x0000029ECC279120>
+    │    │      └ <urllib3.connection.HTTPConnection object at 0x0000029ECE15F710>
+    │    └ None
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE15F710>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 218, in _new_conn
+    raise NewConnectionError(
+          └ <class 'urllib3.exceptions.NewConnectionError'>
+
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x0000029ECE15F710>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\adapters.py", line 486, in send
+    resp = conn.urlopen(
+           │    └ <function HTTPConnectionPool.urlopen at 0x0000029ECC2A9760>
+           └ <urllib3.connectionpool.HTTPConnectionPool object at 0x0000029ECE15F050>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 844, in urlopen
+    retries = retries.increment(
+              │       └ <function Retry.increment at 0x0000029ECA60B920>
+              └ Retry(total=0, connect=None, read=False, redirect=None, status=None)
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+          │             │      │    │            └ NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE15F710>: Failed to establish a new connection: [...
+          │             │      │    └ NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE15F710>: Failed to establish a new connection: [...
+          │             │      └ '/api/heartbeat'
+          │             └ <urllib3.connectionpool.HTTPConnectionPool object at 0x0000029ECE15F050>
+          └ <class 'urllib3.exceptions.MaxRetryError'>
+
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=1323): Max retries exceeded with url: /api/heartbeat (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE15F710>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "d:\files\VSCode\BYR-Team-Interview\Function.py", line 150, in <module>
+    HeartBeat()  # 更新Token
+    └ <function HeartBeat at 0x0000029ECE0EF060>
+
+> File "d:\files\VSCode\BYR-Team-Interview\Function.py", line 47, in HeartBeat
+    response = requests.get(f"{Url}/api/heartbeat", headers=headers)
+               │        │                                   └ {'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzM3NX0.6u4hE9o3pq...
+               │        └ <function get at 0x0000029ECC4CE5C0>
+               └ <module 'requests' from 'C:\\Users\\three\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\requests\\__init_...
+
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           │              │           │         └ {'headers': {'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzM3NX...
+           │              │           └ None
+           │              └ 'http://127.0.0.1:1323/api/heartbeat'
+           └ <function request at 0x0000029ECC4CE480>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           │       │              │           │      └ {'params': None, 'headers': {'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cC...
+           │       │              │           └ 'http://127.0.0.1:1323/api/heartbeat'
+           │       │              └ 'get'
+           │       └ <function Session.request at 0x0000029ECC508540>
+           └ <requests.sessions.Session object at 0x0000029ECC7BF490>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           │    │    │       └ {'timeout': None, 'allow_redirects': True, 'proxies': OrderedDict(), 'stream': False, 'verify': True, 'cert': None}
+           │    │    └ <PreparedRequest [GET]>
+           │    └ <function Session.send at 0x0000029ECC508A40>
+           └ <requests.sessions.Session object at 0x0000029ECC7BF490>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        │       │    │          └ {'timeout': None, 'proxies': OrderedDict(), 'stream': False, 'verify': True, 'cert': None}
+        │       │    └ <PreparedRequest [GET]>
+        │       └ <function HTTPAdapter.send at 0x0000029ECC4EFD80>
+        └ <requests.adapters.HTTPAdapter object at 0x0000029ECE15E4D0>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+          │                          └ <PreparedRequest [GET]>
+          └ <class 'requests.exceptions.ConnectionError'>
+
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=1323): Max retries exceeded with url: /api/heartbeat (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE15F710>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+2023-10-02T14:16:02.335777+0800 | INFO | Waiting 2s...
+2023-10-02T14:16:06.364441+0800 | ERROR | Connection error: HTTPConnectionPool(host='127.0.0.1', port=1323): Max retries exceeded with url: /api/info (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE1C0E90>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+Traceback (most recent call last):
+
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 203, in _new_conn
+    sock = connection.create_connection(
+           │          └ <function create_connection at 0x0000029ECA608C20>
+           └ <module 'urllib3.util.connection' from 'C:\\Users\\three\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\ur...
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    raise err
+          └ None
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+    │    │       └ ('127.0.0.1', 1323)
+    │    └ <method 'connect' of '_socket.socket' objects>
+    └ <socket.socket [closed] fd=-1, family=2, type=1, proto=0>
+
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+               │    └ <function HTTPConnectionPool._make_request at 0x0000029ECC2A9580>
+               └ <urllib3.connectionpool.HTTPConnectionPool object at 0x0000029ECE1C13D0>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 496, in _make_request
+    conn.request(
+    │    └ <function HTTPConnection.request at 0x0000029ECC2796C0>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE1C0E90>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 395, in request
+    self.endheaders()
+    │    └ <function HTTPConnection.endheaders at 0x0000029ECA5899E0>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE1C0E90>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 1281, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    │    │            │                            └ False
+    │    │            └ None
+    │    └ <function HTTPConnection._send_output at 0x0000029ECA589580>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE1C0E90>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 1041, in _send_output
+    self.send(msg)
+    │    │    └ b'GET /api/info HTTP/1.1\r\nHost: 127.0.0.1:1323\r\nUser-Agent: python-requests/2.31.0\r\nAccept-Encoding: gzip, deflate\r\nA...
+    │    └ <function HTTPConnection.send at 0x0000029ECA5893A0>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE1C0E90>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 979, in send
+    self.connect()
+    │    └ <function HTTPConnection.connect at 0x0000029ECC279260>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE1C0E90>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 243, in connect
+    self.sock = self._new_conn()
+    │    │      │    └ <function HTTPConnection._new_conn at 0x0000029ECC279120>
+    │    │      └ <urllib3.connection.HTTPConnection object at 0x0000029ECE1C0E90>
+    │    └ None
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE1C0E90>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 218, in _new_conn
+    raise NewConnectionError(
+          └ <class 'urllib3.exceptions.NewConnectionError'>
+
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x0000029ECE1C0E90>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\adapters.py", line 486, in send
+    resp = conn.urlopen(
+           │    └ <function HTTPConnectionPool.urlopen at 0x0000029ECC2A9760>
+           └ <urllib3.connectionpool.HTTPConnectionPool object at 0x0000029ECE1C13D0>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 844, in urlopen
+    retries = retries.increment(
+              │       └ <function Retry.increment at 0x0000029ECA60B920>
+              └ Retry(total=0, connect=None, read=False, redirect=None, status=None)
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+          │             │      │    │            └ NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE1C0E90>: Failed to establish a new connection: [...
+          │             │      │    └ NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE1C0E90>: Failed to establish a new connection: [...
+          │             │      └ '/api/info'
+          │             └ <urllib3.connectionpool.HTTPConnectionPool object at 0x0000029ECE1C13D0>
+          └ <class 'urllib3.exceptions.MaxRetryError'>
+
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=1323): Max retries exceeded with url: /api/info (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE1C0E90>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "d:\files\VSCode\BYR-Team-Interview\Function.py", line 151, in <module>
+    Code = getCode()  # 获取要提交的Code
+           └ <function getCode at 0x0000029ECE0EF100>
+
+> File "d:\files\VSCode\BYR-Team-Interview\Function.py", line 70, in getCode
+    response = requests.get(f"{Url}/api/info", headers=headers)
+               │        │                              └ {'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzM3NX0.6u4hE9o3pq...
+               │        └ <function get at 0x0000029ECC4CE5C0>
+               └ <module 'requests' from 'C:\\Users\\three\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\requests\\__init_...
+
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           │              │           │         └ {'headers': {'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzM3NX...
+           │              │           └ None
+           │              └ 'http://127.0.0.1:1323/api/info'
+           └ <function request at 0x0000029ECC4CE480>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           │       │              │           │      └ {'params': None, 'headers': {'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cC...
+           │       │              │           └ 'http://127.0.0.1:1323/api/info'
+           │       │              └ 'get'
+           │       └ <function Session.request at 0x0000029ECC508540>
+           └ <requests.sessions.Session object at 0x0000029ECE15B750>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           │    │    │       └ {'timeout': None, 'allow_redirects': True, 'proxies': OrderedDict(), 'stream': False, 'verify': True, 'cert': None}
+           │    │    └ <PreparedRequest [GET]>
+           │    └ <function Session.send at 0x0000029ECC508A40>
+           └ <requests.sessions.Session object at 0x0000029ECE15B750>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        │       │    │          └ {'timeout': None, 'proxies': OrderedDict(), 'stream': False, 'verify': True, 'cert': None}
+        │       │    └ <PreparedRequest [GET]>
+        │       └ <function HTTPAdapter.send at 0x0000029ECC4EFD80>
+        └ <requests.adapters.HTTPAdapter object at 0x0000029ECE1C1050>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+          │                          └ <PreparedRequest [GET]>
+          └ <class 'requests.exceptions.ConnectionError'>
+
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=1323): Max retries exceeded with url: /api/info (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE1C0E90>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+2023-10-02T14:16:06.382140+0800 | INFO | Waiting 2s...
+2023-10-02T14:16:08.383002+0800 | INFO | Code didn't change, waiting 5s...
+2023-10-02T14:16:13.384464+0800 | ERROR | 502: Bad Gateway
+2023-10-02T14:16:13.387245+0800 | ERROR | 502: Bad Gateway
+2023-10-02T14:16:13.387987+0800 | INFO | Code didn't change, waiting 5s...
+2023-10-02T14:16:18.389841+0800 | ERROR | 502: Bad Gateway
+2023-10-02T14:16:18.391754+0800 | ERROR | 502: Bad Gateway
+2023-10-02T14:16:18.392395+0800 | INFO | Code didn't change, waiting 5s...
+2023-10-02T14:16:23.394889+0800 | ERROR | 401: JWT is invalid or expired
+2023-10-02T14:16:23.396904+0800 | INFO | Received password: 653c239689
+2023-10-02T14:16:23.399109+0800 | INFO | Get token successfully: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzQwM30.Nqg-aYZCnJ34ipkyniL5UQpkkzsUgi3nArzZAcf7FCs
+2023-10-02T14:16:23.400532+0800 | INFO | Received code: 334ebfc3d4
+2023-10-02T14:16:23.402624+0800 | INFO | Validation successful. Server response: "OK"
+
+2023-10-02T14:16:28.404402+0800 | INFO | Token refreshed: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzQwOH0.Mnia27eCIe_d12U3eQY5MQDHiPWgg1wFDlW_qnM48QU
+2023-10-02T14:16:28.407184+0800 | INFO | Received code: 334ebfc3d4
+2023-10-02T14:16:28.407795+0800 | INFO | Code didn't change, waiting 5s...
+2023-10-02T14:16:35.450446+0800 | ERROR | Connection error: HTTPConnectionPool(host='127.0.0.1', port=1323): Max retries exceeded with url: /api/heartbeat (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE1C3950>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+Traceback (most recent call last):
+
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 203, in _new_conn
+    sock = connection.create_connection(
+           │          └ <function create_connection at 0x0000029ECA608C20>
+           └ <module 'urllib3.util.connection' from 'C:\\Users\\three\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\ur...
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    raise err
+          └ None
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+    │    │       └ ('127.0.0.1', 1323)
+    │    └ <method 'connect' of '_socket.socket' objects>
+    └ <socket.socket [closed] fd=-1, family=2, type=1, proto=0>
+
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+               │    └ <function HTTPConnectionPool._make_request at 0x0000029ECC2A9580>
+               └ <urllib3.connectionpool.HTTPConnectionPool object at 0x0000029ECE1C30D0>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 496, in _make_request
+    conn.request(
+    │    └ <function HTTPConnection.request at 0x0000029ECC2796C0>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE1C3950>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 395, in request
+    self.endheaders()
+    │    └ <function HTTPConnection.endheaders at 0x0000029ECA5899E0>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE1C3950>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 1281, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    │    │            │                            └ False
+    │    │            └ None
+    │    └ <function HTTPConnection._send_output at 0x0000029ECA589580>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE1C3950>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 1041, in _send_output
+    self.send(msg)
+    │    │    └ b'GET /api/heartbeat HTTP/1.1\r\nHost: 127.0.0.1:1323\r\nUser-Agent: python-requests/2.31.0\r\nAccept-Encoding: gzip, deflate...
+    │    └ <function HTTPConnection.send at 0x0000029ECA5893A0>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE1C3950>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 979, in send
+    self.connect()
+    │    └ <function HTTPConnection.connect at 0x0000029ECC279260>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE1C3950>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 243, in connect
+    self.sock = self._new_conn()
+    │    │      │    └ <function HTTPConnection._new_conn at 0x0000029ECC279120>
+    │    │      └ <urllib3.connection.HTTPConnection object at 0x0000029ECE1C3950>
+    │    └ None
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE1C3950>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 218, in _new_conn
+    raise NewConnectionError(
+          └ <class 'urllib3.exceptions.NewConnectionError'>
+
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x0000029ECE1C3950>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\adapters.py", line 486, in send
+    resp = conn.urlopen(
+           │    └ <function HTTPConnectionPool.urlopen at 0x0000029ECC2A9760>
+           └ <urllib3.connectionpool.HTTPConnectionPool object at 0x0000029ECE1C30D0>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 844, in urlopen
+    retries = retries.increment(
+              │       └ <function Retry.increment at 0x0000029ECA60B920>
+              └ Retry(total=0, connect=None, read=False, redirect=None, status=None)
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+          │             │      │    │            └ NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE1C3950>: Failed to establish a new connection: [...
+          │             │      │    └ NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE1C3950>: Failed to establish a new connection: [...
+          │             │      └ '/api/heartbeat'
+          │             └ <urllib3.connectionpool.HTTPConnectionPool object at 0x0000029ECE1C30D0>
+          └ <class 'urllib3.exceptions.MaxRetryError'>
+
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=1323): Max retries exceeded with url: /api/heartbeat (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE1C3950>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "d:\files\VSCode\BYR-Team-Interview\Function.py", line 150, in <module>
+    HeartBeat()  # 更新Token
+    └ <function HeartBeat at 0x0000029ECE0EF060>
+
+> File "d:\files\VSCode\BYR-Team-Interview\Function.py", line 47, in HeartBeat
+    response = requests.get(f"{Url}/api/heartbeat", headers=headers)
+               │        │                                   └ {'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzQwOH0.Mnia27eCIe...
+               │        └ <function get at 0x0000029ECC4CE5C0>
+               └ <module 'requests' from 'C:\\Users\\three\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\requests\\__init_...
+
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           │              │           │         └ {'headers': {'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzQwOH...
+           │              │           └ None
+           │              └ 'http://127.0.0.1:1323/api/heartbeat'
+           └ <function request at 0x0000029ECC4CE480>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           │       │              │           │      └ {'params': None, 'headers': {'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cC...
+           │       │              │           └ 'http://127.0.0.1:1323/api/heartbeat'
+           │       │              └ 'get'
+           │       └ <function Session.request at 0x0000029ECC508540>
+           └ <requests.sessions.Session object at 0x0000029ECE14AB90>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           │    │    │       └ {'timeout': None, 'allow_redirects': True, 'proxies': OrderedDict(), 'stream': False, 'verify': True, 'cert': None}
+           │    │    └ <PreparedRequest [GET]>
+           │    └ <function Session.send at 0x0000029ECC508A40>
+           └ <requests.sessions.Session object at 0x0000029ECE14AB90>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        │       │    │          └ {'timeout': None, 'proxies': OrderedDict(), 'stream': False, 'verify': True, 'cert': None}
+        │       │    └ <PreparedRequest [GET]>
+        │       └ <function HTTPAdapter.send at 0x0000029ECC4EFD80>
+        └ <requests.adapters.HTTPAdapter object at 0x0000029ECE1C3C90>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+          │                          └ <PreparedRequest [GET]>
+          └ <class 'requests.exceptions.ConnectionError'>
+
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=1323): Max retries exceeded with url: /api/heartbeat (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE1C3950>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+2023-10-02T14:16:35.466822+0800 | INFO | Waiting 2s...
+2023-10-02T14:16:39.511606+0800 | ERROR | 502: Bad Gateway
+2023-10-02T14:16:39.512251+0800 | INFO | Code didn't change, waiting 5s...
+2023-10-02T14:16:44.514841+0800 | ERROR | 502: Bad Gateway
+2023-10-02T14:16:44.516346+0800 | ERROR | 502: Bad Gateway
+2023-10-02T14:16:44.517173+0800 | INFO | Code didn't change, waiting 5s...
+2023-10-02T14:16:49.519236+0800 | ERROR | 401: JWT is invalid or expired
+2023-10-02T14:16:49.521137+0800 | INFO | Received password: 888603f56f
+2023-10-02T14:16:49.523159+0800 | INFO | Get token successfully: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzQyOX0.dDsOEflH7bluhWf5B5bZz-VN27nlvg02NZNho2LhB9o
+2023-10-02T14:16:49.524715+0800 | INFO | Received code: f85faaac4c
+2023-10-02T14:16:49.526742+0800 | INFO | Validation successful. Server response: "OK"
+
+2023-10-02T14:16:54.529013+0800 | INFO | Token refreshed: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzQzNH0.3V3cG1G-rbV4G8rlf7PIeXgjgXGzJuzJBGOYDFVblFE
+2023-10-02T14:16:54.530952+0800 | INFO | Received code: f85faaac4c
+2023-10-02T14:16:54.531626+0800 | INFO | Code didn't change, waiting 5s...
+2023-10-02T14:16:59.533910+0800 | ERROR | 502: Bad Gateway
+2023-10-02T14:16:59.535736+0800 | ERROR | 502: Bad Gateway
+2023-10-02T14:16:59.536249+0800 | INFO | Code didn't change, waiting 5s...
+2023-10-02T14:17:04.538496+0800 | ERROR | 502: Bad Gateway
+2023-10-02T14:17:04.540223+0800 | ERROR | 502: Bad Gateway
+2023-10-02T14:17:04.540807+0800 | INFO | Code didn't change, waiting 5s...
+2023-10-02T14:17:09.543446+0800 | INFO | Token refreshed: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzQ0OX0.iC8F93ms5id-UosI9RgTnGkYqnr_LHYD02rLZxH3RXY
+2023-10-02T14:17:09.544668+0800 | INFO | Received code: 846244d3e1
+2023-10-02T14:17:09.547018+0800 | INFO | Validation successful. Server response: "OK"
+
+2023-10-02T14:17:14.550456+0800 | INFO | Token refreshed: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzQ1NH0.17Ry0A2sNpIFzLjji8J8fD_RjIET0abV9cmNQHvswW4
+2023-10-02T14:17:14.552759+0800 | INFO | Received code: 846244d3e1
+2023-10-02T14:17:14.553223+0800 | INFO | Code didn't change, waiting 5s...
+2023-10-02T14:17:19.554643+0800 | ERROR | 401: JWT is invalid or expired
+2023-10-02T14:17:19.557060+0800 | INFO | Received password: 9206f2c6c4
+2023-10-02T14:17:19.558846+0800 | INFO | Get token successfully: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzQ1OX0.VPF4v84Z24rN0RP52Yrj0QdB9r7L7waSlbo7yJrJYF8
+2023-10-02T14:17:19.560852+0800 | INFO | Received code: 846244d3e1
+2023-10-02T14:17:19.561601+0800 | INFO | Code didn't change, waiting 5s...
+2023-10-02T14:17:24.564079+0800 | INFO | Token refreshed: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzQ2NH0.Oqv08fvmoDAd-iXm-rYBDCMHSf5jQpeJk_cBOIePILY
+2023-10-02T14:17:24.565913+0800 | INFO | Received code: 846244d3e1
+2023-10-02T14:17:24.566417+0800 | INFO | Code didn't change, waiting 5s...
+2023-10-02T14:17:29.568443+0800 | ERROR | 502: Bad Gateway
+2023-10-02T14:17:29.570566+0800 | ERROR | 502: Bad Gateway
+2023-10-02T14:17:29.571339+0800 | INFO | Code didn't change, waiting 5s...
+2023-10-02T14:17:34.573624+0800 | ERROR | 502: Bad Gateway
+2023-10-02T14:17:34.574912+0800 | ERROR | 502: Bad Gateway
+2023-10-02T14:17:34.575924+0800 | INFO | Code didn't change, waiting 5s...
+2023-10-02T14:17:39.578549+0800 | ERROR | 401: JWT is invalid or expired
+2023-10-02T14:17:39.580309+0800 | INFO | Received password: 2cb8f239ef
+2023-10-02T14:17:39.582851+0800 | INFO | Get token successfully: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzQ3OX0.u9xR46hJXcNFsD39t-Kax3k5du6ZlnBr-kDSGYuZ19s
+2023-10-02T14:17:39.584401+0800 | INFO | Received code: efb9148262
+2023-10-02T14:17:39.587212+0800 | INFO | Validation successful. Server response: "OK"
+
+2023-10-02T14:17:44.590415+0800 | INFO | Token refreshed: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzQ4NH0.jAA6Sw0uQ-L9WyqO7RloEoZSF_pa_4TNqPMWUhG7YZc
+2023-10-02T14:17:44.592063+0800 | INFO | Received code: efb9148262
+2023-10-02T14:17:44.592876+0800 | INFO | Code didn't change, waiting 5s...
+2023-10-02T14:17:51.638791+0800 | ERROR | Connection error: HTTPConnectionPool(host='127.0.0.1', port=1323): Max retries exceeded with url: /api/heartbeat (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE15D910>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+Traceback (most recent call last):
+
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 203, in _new_conn
+    sock = connection.create_connection(
+           │          └ <function create_connection at 0x0000029ECA608C20>
+           └ <module 'urllib3.util.connection' from 'C:\\Users\\three\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\ur...
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    raise err
+          └ None
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+    │    │       └ ('127.0.0.1', 1323)
+    │    └ <method 'connect' of '_socket.socket' objects>
+    └ <socket.socket [closed] fd=-1, family=2, type=1, proto=0>
+
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+               │    └ <function HTTPConnectionPool._make_request at 0x0000029ECC2A9580>
+               └ <urllib3.connectionpool.HTTPConnectionPool object at 0x0000029ECE15D890>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 496, in _make_request
+    conn.request(
+    │    └ <function HTTPConnection.request at 0x0000029ECC2796C0>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE15D910>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 395, in request
+    self.endheaders()
+    │    └ <function HTTPConnection.endheaders at 0x0000029ECA5899E0>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE15D910>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 1281, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    │    │            │                            └ False
+    │    │            └ None
+    │    └ <function HTTPConnection._send_output at 0x0000029ECA589580>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE15D910>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 1041, in _send_output
+    self.send(msg)
+    │    │    └ b'GET /api/heartbeat HTTP/1.1\r\nHost: 127.0.0.1:1323\r\nUser-Agent: python-requests/2.31.0\r\nAccept-Encoding: gzip, deflate...
+    │    └ <function HTTPConnection.send at 0x0000029ECA5893A0>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE15D910>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 979, in send
+    self.connect()
+    │    └ <function HTTPConnection.connect at 0x0000029ECC279260>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE15D910>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 243, in connect
+    self.sock = self._new_conn()
+    │    │      │    └ <function HTTPConnection._new_conn at 0x0000029ECC279120>
+    │    │      └ <urllib3.connection.HTTPConnection object at 0x0000029ECE15D910>
+    │    └ None
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE15D910>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 218, in _new_conn
+    raise NewConnectionError(
+          └ <class 'urllib3.exceptions.NewConnectionError'>
+
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x0000029ECE15D910>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\adapters.py", line 486, in send
+    resp = conn.urlopen(
+           │    └ <function HTTPConnectionPool.urlopen at 0x0000029ECC2A9760>
+           └ <urllib3.connectionpool.HTTPConnectionPool object at 0x0000029ECE15D890>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 844, in urlopen
+    retries = retries.increment(
+              │       └ <function Retry.increment at 0x0000029ECA60B920>
+              └ Retry(total=0, connect=None, read=False, redirect=None, status=None)
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+          │             │      │    │            └ NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE15D910>: Failed to establish a new connection: [...
+          │             │      │    └ NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE15D910>: Failed to establish a new connection: [...
+          │             │      └ '/api/heartbeat'
+          │             └ <urllib3.connectionpool.HTTPConnectionPool object at 0x0000029ECE15D890>
+          └ <class 'urllib3.exceptions.MaxRetryError'>
+
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=1323): Max retries exceeded with url: /api/heartbeat (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE15D910>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "d:\files\VSCode\BYR-Team-Interview\Function.py", line 150, in <module>
+    HeartBeat()  # 更新Token
+    └ <function HeartBeat at 0x0000029ECE0EF060>
+
+> File "d:\files\VSCode\BYR-Team-Interview\Function.py", line 47, in HeartBeat
+    response = requests.get(f"{Url}/api/heartbeat", headers=headers)
+               │        │                                   └ {'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzQ4NH0.jAA6Sw0uQ-...
+               │        └ <function get at 0x0000029ECC4CE5C0>
+               └ <module 'requests' from 'C:\\Users\\three\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\requests\\__init_...
+
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           │              │           │         └ {'headers': {'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzQ4NH...
+           │              │           └ None
+           │              └ 'http://127.0.0.1:1323/api/heartbeat'
+           └ <function request at 0x0000029ECC4CE480>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           │       │              │           │      └ {'params': None, 'headers': {'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cC...
+           │       │              │           └ 'http://127.0.0.1:1323/api/heartbeat'
+           │       │              └ 'get'
+           │       └ <function Session.request at 0x0000029ECC508540>
+           └ <requests.sessions.Session object at 0x0000029ECE116810>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           │    │    │       └ {'timeout': None, 'allow_redirects': True, 'proxies': OrderedDict(), 'stream': False, 'verify': True, 'cert': None}
+           │    │    └ <PreparedRequest [GET]>
+           │    └ <function Session.send at 0x0000029ECC508A40>
+           └ <requests.sessions.Session object at 0x0000029ECE116810>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        │       │    │          └ {'timeout': None, 'proxies': OrderedDict(), 'stream': False, 'verify': True, 'cert': None}
+        │       │    └ <PreparedRequest [GET]>
+        │       └ <function HTTPAdapter.send at 0x0000029ECC4EFD80>
+        └ <requests.adapters.HTTPAdapter object at 0x0000029ECE1C1C10>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+          │                          └ <PreparedRequest [GET]>
+          └ <class 'requests.exceptions.ConnectionError'>
+
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=1323): Max retries exceeded with url: /api/heartbeat (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE15D910>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+2023-10-02T14:17:51.655869+0800 | INFO | Waiting 2s...
+2023-10-02T14:17:55.694248+0800 | ERROR | Connection error: HTTPConnectionPool(host='127.0.0.1', port=1323): Max retries exceeded with url: /api/info (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE158890>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+Traceback (most recent call last):
+
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 203, in _new_conn
+    sock = connection.create_connection(
+           │          └ <function create_connection at 0x0000029ECA608C20>
+           └ <module 'urllib3.util.connection' from 'C:\\Users\\three\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\ur...
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    raise err
+          └ None
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+    │    │       └ ('127.0.0.1', 1323)
+    │    └ <method 'connect' of '_socket.socket' objects>
+    └ <socket.socket [closed] fd=-1, family=2, type=1, proto=0>
+
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+               │    └ <function HTTPConnectionPool._make_request at 0x0000029ECC2A9580>
+               └ <urllib3.connectionpool.HTTPConnectionPool object at 0x0000029ECE158F90>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 496, in _make_request
+    conn.request(
+    │    └ <function HTTPConnection.request at 0x0000029ECC2796C0>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE158890>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 395, in request
+    self.endheaders()
+    │    └ <function HTTPConnection.endheaders at 0x0000029ECA5899E0>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE158890>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 1281, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    │    │            │                            └ False
+    │    │            └ None
+    │    └ <function HTTPConnection._send_output at 0x0000029ECA589580>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE158890>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 1041, in _send_output
+    self.send(msg)
+    │    │    └ b'GET /api/info HTTP/1.1\r\nHost: 127.0.0.1:1323\r\nUser-Agent: python-requests/2.31.0\r\nAccept-Encoding: gzip, deflate\r\nA...
+    │    └ <function HTTPConnection.send at 0x0000029ECA5893A0>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE158890>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 979, in send
+    self.connect()
+    │    └ <function HTTPConnection.connect at 0x0000029ECC279260>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE158890>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 243, in connect
+    self.sock = self._new_conn()
+    │    │      │    └ <function HTTPConnection._new_conn at 0x0000029ECC279120>
+    │    │      └ <urllib3.connection.HTTPConnection object at 0x0000029ECE158890>
+    │    └ None
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE158890>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 218, in _new_conn
+    raise NewConnectionError(
+          └ <class 'urllib3.exceptions.NewConnectionError'>
+
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x0000029ECE158890>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\adapters.py", line 486, in send
+    resp = conn.urlopen(
+           │    └ <function HTTPConnectionPool.urlopen at 0x0000029ECC2A9760>
+           └ <urllib3.connectionpool.HTTPConnectionPool object at 0x0000029ECE158F90>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 844, in urlopen
+    retries = retries.increment(
+              │       └ <function Retry.increment at 0x0000029ECA60B920>
+              └ Retry(total=0, connect=None, read=False, redirect=None, status=None)
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+          │             │      │    │            └ NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE158890>: Failed to establish a new connection: [...
+          │             │      │    └ NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE158890>: Failed to establish a new connection: [...
+          │             │      └ '/api/info'
+          │             └ <urllib3.connectionpool.HTTPConnectionPool object at 0x0000029ECE158F90>
+          └ <class 'urllib3.exceptions.MaxRetryError'>
+
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=1323): Max retries exceeded with url: /api/info (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE158890>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "d:\files\VSCode\BYR-Team-Interview\Function.py", line 151, in <module>
+    Code = getCode()  # 获取要提交的Code
+           └ <function getCode at 0x0000029ECE0EF100>
+
+> File "d:\files\VSCode\BYR-Team-Interview\Function.py", line 70, in getCode
+    response = requests.get(f"{Url}/api/info", headers=headers)
+               │        │                              └ {'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzQ4NH0.jAA6Sw0uQ-...
+               │        └ <function get at 0x0000029ECC4CE5C0>
+               └ <module 'requests' from 'C:\\Users\\three\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\requests\\__init_...
+
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           │              │           │         └ {'headers': {'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzQ4NH...
+           │              │           └ None
+           │              └ 'http://127.0.0.1:1323/api/info'
+           └ <function request at 0x0000029ECC4CE480>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           │       │              │           │      └ {'params': None, 'headers': {'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cC...
+           │       │              │           └ 'http://127.0.0.1:1323/api/info'
+           │       │              └ 'get'
+           │       └ <function Session.request at 0x0000029ECC508540>
+           └ <requests.sessions.Session object at 0x0000029ECE152B90>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           │    │    │       └ {'timeout': None, 'allow_redirects': True, 'proxies': OrderedDict(), 'stream': False, 'verify': True, 'cert': None}
+           │    │    └ <PreparedRequest [GET]>
+           │    └ <function Session.send at 0x0000029ECC508A40>
+           └ <requests.sessions.Session object at 0x0000029ECE152B90>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        │       │    │          └ {'timeout': None, 'proxies': OrderedDict(), 'stream': False, 'verify': True, 'cert': None}
+        │       │    └ <PreparedRequest [GET]>
+        │       └ <function HTTPAdapter.send at 0x0000029ECC4EFD80>
+        └ <requests.adapters.HTTPAdapter object at 0x0000029ECE15E490>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+          │                          └ <PreparedRequest [GET]>
+          └ <class 'requests.exceptions.ConnectionError'>
+
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=1323): Max retries exceeded with url: /api/info (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE158890>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+2023-10-02T14:17:55.710240+0800 | INFO | Waiting 2s...
+2023-10-02T14:17:57.710845+0800 | INFO | Code didn't change, waiting 5s...
+2023-10-02T14:18:02.712971+0800 | ERROR | 502: Bad Gateway
+2023-10-02T14:18:02.714853+0800 | ERROR | 502: Bad Gateway
+2023-10-02T14:18:02.715356+0800 | INFO | Code didn't change, waiting 5s...
+2023-10-02T14:18:07.718030+0800 | ERROR | 502: Bad Gateway
+2023-10-02T14:18:07.720066+0800 | ERROR | 502: Bad Gateway
+2023-10-02T14:18:07.720861+0800 | INFO | Code didn't change, waiting 5s...
+2023-10-02T14:18:12.722860+0800 | ERROR | 401: JWT is invalid or expired
+2023-10-02T14:18:12.724743+0800 | INFO | Received password: d5fdad5615
+2023-10-02T14:18:12.726921+0800 | INFO | Get token successfully: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzUxMn0.BKny9OX1x6juil7W5wEQleXWuRWXewWx2RVr15ZAmeY
+2023-10-02T14:18:12.728428+0800 | INFO | Received code: 170b33f296
+2023-10-02T14:18:12.730242+0800 | INFO | Validation successful. Server response: "OK"
+
+2023-10-02T14:18:17.733386+0800 | INFO | Token refreshed: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzUxN30.KnBL3ghaKBQLmDQTu_t3Wx8iqmKF_e0gcAqMh3EKV-o
+2023-10-02T14:18:17.734557+0800 | INFO | Received code: 170b33f296
+2023-10-02T14:18:17.735559+0800 | INFO | Code didn't change, waiting 5s...
+2023-10-02T14:18:22.738505+0800 | ERROR | 401: JWT is invalid or expired
+2023-10-02T14:18:22.739971+0800 | INFO | Received password: fd6eee5c2f
+2023-10-02T14:18:22.741587+0800 | INFO | Get token successfully: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzUyMn0.twzNgIFi4lU3p0ze-BtCmWfcs9vGhcqEawQ4_pmcXec
+2023-10-02T14:18:22.743353+0800 | INFO | Received code: 170b33f296
+2023-10-02T14:18:22.744051+0800 | INFO | Code didn't change, waiting 5s...
+2023-10-02T14:18:27.746024+0800 | INFO | Token refreshed: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzUyN30.aPiXHqOfeo1zzfwMmEJZKD5ckrCF38jo409rHupufqk
+2023-10-02T14:18:27.748207+0800 | INFO | Received code: 170b33f296
+2023-10-02T14:18:27.748890+0800 | INFO | Code didn't change, waiting 5s...
+2023-10-02T14:18:32.750820+0800 | ERROR | 401: JWT is invalid or expired
+2023-10-02T14:18:32.752546+0800 | INFO | Received password: d827a93d87
+2023-10-02T14:18:32.754619+0800 | INFO | Get token successfully: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzUzMn0.O-nOU8oScwNV14NczzO_UJk0vs5t__6JzxFZnIB61dg
+2023-10-02T14:18:32.755894+0800 | INFO | Received code: 5d10f7732b
+2023-10-02T14:18:32.757595+0800 | INFO | Validation successful. Server response: "OK"
+
+2023-10-02T14:18:37.760836+0800 | INFO | Token refreshed: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzUzN30.vvnR5MGbC5GJ44wayvAPkecA03uJVCHl23QyI_w9E34
+2023-10-02T14:18:37.763165+0800 | INFO | Received code: 5d10f7732b
+2023-10-02T14:18:37.763582+0800 | INFO | Code didn't change, waiting 5s...
+2023-10-02T14:18:42.765798+0800 | ERROR | 401: JWT is invalid or expired
+2023-10-02T14:18:42.767609+0800 | INFO | Received password: df49d39b76
+2023-10-02T14:18:42.769055+0800 | INFO | Get token successfully: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzU0Mn0.bo12vvfZWapdTPOTxDBnOihHqu0NhlR8vSuMPUO5mUc
+2023-10-02T14:18:42.770808+0800 | INFO | Received code: 5d10f7732b
+2023-10-02T14:18:42.771414+0800 | INFO | Code didn't change, waiting 5s...
+2023-10-02T14:18:47.773793+0800 | INFO | Token refreshed: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzU0N30.sUoxZXfYKhh9mcp8DXw6jl9lsLBwPw8ShrJnB9MDF8M
+2023-10-02T14:18:47.774953+0800 | INFO | Received code: 5d10f7732b
+2023-10-02T14:18:47.775936+0800 | INFO | Code didn't change, waiting 5s...
+2023-10-02T14:18:52.778119+0800 | ERROR | 502: Bad Gateway
+2023-10-02T14:18:52.780162+0800 | ERROR | 502: Bad Gateway
+2023-10-02T14:18:52.780892+0800 | INFO | Code didn't change, waiting 5s...
+2023-10-02T14:18:57.782817+0800 | ERROR | 502: Bad Gateway
+2023-10-02T14:18:57.784530+0800 | ERROR | 502: Bad Gateway
+2023-10-02T14:18:57.785033+0800 | INFO | Code didn't change, waiting 5s...
+2023-10-02T14:19:04.822103+0800 | ERROR | Connection error: HTTPConnectionPool(host='127.0.0.1', port=1323): Max retries exceeded with url: /api/heartbeat (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE1CC2D0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+Traceback (most recent call last):
+
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 203, in _new_conn
+    sock = connection.create_connection(
+           │          └ <function create_connection at 0x0000029ECA608C20>
+           └ <module 'urllib3.util.connection' from 'C:\\Users\\three\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\ur...
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    raise err
+          └ None
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+    │    │       └ ('127.0.0.1', 1323)
+    │    └ <method 'connect' of '_socket.socket' objects>
+    └ <socket.socket [closed] fd=-1, family=2, type=1, proto=0>
+
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+               │    └ <function HTTPConnectionPool._make_request at 0x0000029ECC2A9580>
+               └ <urllib3.connectionpool.HTTPConnectionPool object at 0x0000029ECE1CDE50>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 496, in _make_request
+    conn.request(
+    │    └ <function HTTPConnection.request at 0x0000029ECC2796C0>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE1CC2D0>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 395, in request
+    self.endheaders()
+    │    └ <function HTTPConnection.endheaders at 0x0000029ECA5899E0>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE1CC2D0>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 1281, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    │    │            │                            └ False
+    │    │            └ None
+    │    └ <function HTTPConnection._send_output at 0x0000029ECA589580>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE1CC2D0>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 1041, in _send_output
+    self.send(msg)
+    │    │    └ b'GET /api/heartbeat HTTP/1.1\r\nHost: 127.0.0.1:1323\r\nUser-Agent: python-requests/2.31.0\r\nAccept-Encoding: gzip, deflate...
+    │    └ <function HTTPConnection.send at 0x0000029ECA5893A0>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE1CC2D0>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 979, in send
+    self.connect()
+    │    └ <function HTTPConnection.connect at 0x0000029ECC279260>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE1CC2D0>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 243, in connect
+    self.sock = self._new_conn()
+    │    │      │    └ <function HTTPConnection._new_conn at 0x0000029ECC279120>
+    │    │      └ <urllib3.connection.HTTPConnection object at 0x0000029ECE1CC2D0>
+    │    └ None
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE1CC2D0>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 218, in _new_conn
+    raise NewConnectionError(
+          └ <class 'urllib3.exceptions.NewConnectionError'>
+
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x0000029ECE1CC2D0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\adapters.py", line 486, in send
+    resp = conn.urlopen(
+           │    └ <function HTTPConnectionPool.urlopen at 0x0000029ECC2A9760>
+           └ <urllib3.connectionpool.HTTPConnectionPool object at 0x0000029ECE1CDE50>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 844, in urlopen
+    retries = retries.increment(
+              │       └ <function Retry.increment at 0x0000029ECA60B920>
+              └ Retry(total=0, connect=None, read=False, redirect=None, status=None)
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+          │             │      │    │            └ NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE1CC2D0>: Failed to establish a new connection: [...
+          │             │      │    └ NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE1CC2D0>: Failed to establish a new connection: [...
+          │             │      └ '/api/heartbeat'
+          │             └ <urllib3.connectionpool.HTTPConnectionPool object at 0x0000029ECE1CDE50>
+          └ <class 'urllib3.exceptions.MaxRetryError'>
+
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=1323): Max retries exceeded with url: /api/heartbeat (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE1CC2D0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "d:\files\VSCode\BYR-Team-Interview\Function.py", line 150, in <module>
+    HeartBeat()  # 更新Token
+    └ <function HeartBeat at 0x0000029ECE0EF060>
+
+> File "d:\files\VSCode\BYR-Team-Interview\Function.py", line 47, in HeartBeat
+    response = requests.get(f"{Url}/api/heartbeat", headers=headers)
+               │        │                                   └ {'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzU0N30.sUoxZXfYKh...
+               │        └ <function get at 0x0000029ECC4CE5C0>
+               └ <module 'requests' from 'C:\\Users\\three\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\requests\\__init_...
+
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           │              │           │         └ {'headers': {'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzU0N3...
+           │              │           └ None
+           │              └ 'http://127.0.0.1:1323/api/heartbeat'
+           └ <function request at 0x0000029ECC4CE480>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           │       │              │           │      └ {'params': None, 'headers': {'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cC...
+           │       │              │           └ 'http://127.0.0.1:1323/api/heartbeat'
+           │       │              └ 'get'
+           │       └ <function Session.request at 0x0000029ECC508540>
+           └ <requests.sessions.Session object at 0x0000029ECE1586D0>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           │    │    │       └ {'timeout': None, 'allow_redirects': True, 'proxies': OrderedDict(), 'stream': False, 'verify': True, 'cert': None}
+           │    │    └ <PreparedRequest [GET]>
+           │    └ <function Session.send at 0x0000029ECC508A40>
+           └ <requests.sessions.Session object at 0x0000029ECE1586D0>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        │       │    │          └ {'timeout': None, 'proxies': OrderedDict(), 'stream': False, 'verify': True, 'cert': None}
+        │       │    └ <PreparedRequest [GET]>
+        │       └ <function HTTPAdapter.send at 0x0000029ECC4EFD80>
+        └ <requests.adapters.HTTPAdapter object at 0x0000029ECE1CE1D0>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+          │                          └ <PreparedRequest [GET]>
+          └ <class 'requests.exceptions.ConnectionError'>
+
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=1323): Max retries exceeded with url: /api/heartbeat (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE1CC2D0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+2023-10-02T14:19:04.838067+0800 | INFO | Waiting 2s...
+2023-10-02T14:19:08.878301+0800 | ERROR | Connection error: HTTPConnectionPool(host='127.0.0.1', port=1323): Max retries exceeded with url: /api/info (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE1CF310>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+Traceback (most recent call last):
+
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 203, in _new_conn
+    sock = connection.create_connection(
+           │          └ <function create_connection at 0x0000029ECA608C20>
+           └ <module 'urllib3.util.connection' from 'C:\\Users\\three\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\ur...
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    raise err
+          └ None
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+    │    │       └ ('127.0.0.1', 1323)
+    │    └ <method 'connect' of '_socket.socket' objects>
+    └ <socket.socket [closed] fd=-1, family=2, type=1, proto=0>
+
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+               │    └ <function HTTPConnectionPool._make_request at 0x0000029ECC2A9580>
+               └ <urllib3.connectionpool.HTTPConnectionPool object at 0x0000029ECE1CD810>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 496, in _make_request
+    conn.request(
+    │    └ <function HTTPConnection.request at 0x0000029ECC2796C0>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE1CF310>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 395, in request
+    self.endheaders()
+    │    └ <function HTTPConnection.endheaders at 0x0000029ECA5899E0>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE1CF310>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 1281, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    │    │            │                            └ False
+    │    │            └ None
+    │    └ <function HTTPConnection._send_output at 0x0000029ECA589580>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE1CF310>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 1041, in _send_output
+    self.send(msg)
+    │    │    └ b'GET /api/info HTTP/1.1\r\nHost: 127.0.0.1:1323\r\nUser-Agent: python-requests/2.31.0\r\nAccept-Encoding: gzip, deflate\r\nA...
+    │    └ <function HTTPConnection.send at 0x0000029ECA5893A0>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE1CF310>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 979, in send
+    self.connect()
+    │    └ <function HTTPConnection.connect at 0x0000029ECC279260>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE1CF310>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 243, in connect
+    self.sock = self._new_conn()
+    │    │      │    └ <function HTTPConnection._new_conn at 0x0000029ECC279120>
+    │    │      └ <urllib3.connection.HTTPConnection object at 0x0000029ECE1CF310>
+    │    └ None
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE1CF310>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 218, in _new_conn
+    raise NewConnectionError(
+          └ <class 'urllib3.exceptions.NewConnectionError'>
+
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x0000029ECE1CF310>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\adapters.py", line 486, in send
+    resp = conn.urlopen(
+           │    └ <function HTTPConnectionPool.urlopen at 0x0000029ECC2A9760>
+           └ <urllib3.connectionpool.HTTPConnectionPool object at 0x0000029ECE1CD810>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 844, in urlopen
+    retries = retries.increment(
+              │       └ <function Retry.increment at 0x0000029ECA60B920>
+              └ Retry(total=0, connect=None, read=False, redirect=None, status=None)
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+          │             │      │    │            └ NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE1CF310>: Failed to establish a new connection: [...
+          │             │      │    └ NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE1CF310>: Failed to establish a new connection: [...
+          │             │      └ '/api/info'
+          │             └ <urllib3.connectionpool.HTTPConnectionPool object at 0x0000029ECE1CD810>
+          └ <class 'urllib3.exceptions.MaxRetryError'>
+
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=1323): Max retries exceeded with url: /api/info (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE1CF310>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "d:\files\VSCode\BYR-Team-Interview\Function.py", line 151, in <module>
+    Code = getCode()  # 获取要提交的Code
+           └ <function getCode at 0x0000029ECE0EF100>
+
+> File "d:\files\VSCode\BYR-Team-Interview\Function.py", line 70, in getCode
+    response = requests.get(f"{Url}/api/info", headers=headers)
+               │        │                              └ {'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzU0N30.sUoxZXfYKh...
+               │        └ <function get at 0x0000029ECC4CE5C0>
+               └ <module 'requests' from 'C:\\Users\\three\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\requests\\__init_...
+
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           │              │           │         └ {'headers': {'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzU0N3...
+           │              │           └ None
+           │              └ 'http://127.0.0.1:1323/api/info'
+           └ <function request at 0x0000029ECC4CE480>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           │       │              │           │      └ {'params': None, 'headers': {'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cC...
+           │       │              │           └ 'http://127.0.0.1:1323/api/info'
+           │       │              └ 'get'
+           │       └ <function Session.request at 0x0000029ECC508540>
+           └ <requests.sessions.Session object at 0x0000029ECE15D950>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           │    │    │       └ {'timeout': None, 'allow_redirects': True, 'proxies': OrderedDict(), 'stream': False, 'verify': True, 'cert': None}
+           │    │    └ <PreparedRequest [GET]>
+           │    └ <function Session.send at 0x0000029ECC508A40>
+           └ <requests.sessions.Session object at 0x0000029ECE15D950>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        │       │    │          └ {'timeout': None, 'proxies': OrderedDict(), 'stream': False, 'verify': True, 'cert': None}
+        │       │    └ <PreparedRequest [GET]>
+        │       └ <function HTTPAdapter.send at 0x0000029ECC4EFD80>
+        └ <requests.adapters.HTTPAdapter object at 0x0000029ECE1CFB90>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+          │                          └ <PreparedRequest [GET]>
+          └ <class 'requests.exceptions.ConnectionError'>
+
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=1323): Max retries exceeded with url: /api/info (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE1CF310>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+2023-10-02T14:19:08.894231+0800 | INFO | Waiting 2s...
+2023-10-02T14:19:10.896032+0800 | INFO | Code didn't change, waiting 5s...
+2023-10-02T14:19:15.899044+0800 | ERROR | 401: JWT is invalid or expired
+2023-10-02T14:19:15.900284+0800 | INFO | Received password: 945e89c267
+2023-10-02T14:19:15.901688+0800 | INFO | Get token successfully: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzU3NX0.B2N18GrhOoI_xNcYJ2IOiUr5T_-4M7bvu0ZGVbfonUU
+2023-10-02T14:19:15.903187+0800 | INFO | Received code: 4ad024ebfe
+2023-10-02T14:19:15.904876+0800 | INFO | Validation successful. Server response: "OK"
+
+2023-10-02T14:19:22.948139+0800 | ERROR | Connection error: HTTPConnectionPool(host='127.0.0.1', port=1323): Max retries exceeded with url: /api/heartbeat (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE1CD6D0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+Traceback (most recent call last):
+
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 203, in _new_conn
+    sock = connection.create_connection(
+           │          └ <function create_connection at 0x0000029ECA608C20>
+           └ <module 'urllib3.util.connection' from 'C:\\Users\\three\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\ur...
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    raise err
+          └ None
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+    │    │       └ ('127.0.0.1', 1323)
+    │    └ <method 'connect' of '_socket.socket' objects>
+    └ <socket.socket [closed] fd=-1, family=2, type=1, proto=0>
+
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+               │    └ <function HTTPConnectionPool._make_request at 0x0000029ECC2A9580>
+               └ <urllib3.connectionpool.HTTPConnectionPool object at 0x0000029ECE1CCD50>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 496, in _make_request
+    conn.request(
+    │    └ <function HTTPConnection.request at 0x0000029ECC2796C0>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE1CD6D0>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 395, in request
+    self.endheaders()
+    │    └ <function HTTPConnection.endheaders at 0x0000029ECA5899E0>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE1CD6D0>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 1281, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    │    │            │                            └ False
+    │    │            └ None
+    │    └ <function HTTPConnection._send_output at 0x0000029ECA589580>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE1CD6D0>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 1041, in _send_output
+    self.send(msg)
+    │    │    └ b'GET /api/heartbeat HTTP/1.1\r\nHost: 127.0.0.1:1323\r\nUser-Agent: python-requests/2.31.0\r\nAccept-Encoding: gzip, deflate...
+    │    └ <function HTTPConnection.send at 0x0000029ECA5893A0>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE1CD6D0>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 979, in send
+    self.connect()
+    │    └ <function HTTPConnection.connect at 0x0000029ECC279260>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE1CD6D0>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 243, in connect
+    self.sock = self._new_conn()
+    │    │      │    └ <function HTTPConnection._new_conn at 0x0000029ECC279120>
+    │    │      └ <urllib3.connection.HTTPConnection object at 0x0000029ECE1CD6D0>
+    │    └ None
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE1CD6D0>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 218, in _new_conn
+    raise NewConnectionError(
+          └ <class 'urllib3.exceptions.NewConnectionError'>
+
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x0000029ECE1CD6D0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\adapters.py", line 486, in send
+    resp = conn.urlopen(
+           │    └ <function HTTPConnectionPool.urlopen at 0x0000029ECC2A9760>
+           └ <urllib3.connectionpool.HTTPConnectionPool object at 0x0000029ECE1CCD50>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 844, in urlopen
+    retries = retries.increment(
+              │       └ <function Retry.increment at 0x0000029ECA60B920>
+              └ Retry(total=0, connect=None, read=False, redirect=None, status=None)
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+          │             │      │    │            └ NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE1CD6D0>: Failed to establish a new connection: [...
+          │             │      │    └ NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE1CD6D0>: Failed to establish a new connection: [...
+          │             │      └ '/api/heartbeat'
+          │             └ <urllib3.connectionpool.HTTPConnectionPool object at 0x0000029ECE1CCD50>
+          └ <class 'urllib3.exceptions.MaxRetryError'>
+
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=1323): Max retries exceeded with url: /api/heartbeat (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE1CD6D0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "d:\files\VSCode\BYR-Team-Interview\Function.py", line 150, in <module>
+    HeartBeat()  # 更新Token
+    └ <function HeartBeat at 0x0000029ECE0EF060>
+
+> File "d:\files\VSCode\BYR-Team-Interview\Function.py", line 47, in HeartBeat
+    response = requests.get(f"{Url}/api/heartbeat", headers=headers)
+               │        │                                   └ {'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzU3NX0.B2N18GrhOo...
+               │        └ <function get at 0x0000029ECC4CE5C0>
+               └ <module 'requests' from 'C:\\Users\\three\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\requests\\__init_...
+
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           │              │           │         └ {'headers': {'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzU3NX...
+           │              │           └ None
+           │              └ 'http://127.0.0.1:1323/api/heartbeat'
+           └ <function request at 0x0000029ECC4CE480>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           │       │              │           │      └ {'params': None, 'headers': {'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cC...
+           │       │              │           └ 'http://127.0.0.1:1323/api/heartbeat'
+           │       │              └ 'get'
+           │       └ <function Session.request at 0x0000029ECC508540>
+           └ <requests.sessions.Session object at 0x0000029ECC7D1A50>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           │    │    │       └ {'timeout': None, 'allow_redirects': True, 'proxies': OrderedDict(), 'stream': False, 'verify': True, 'cert': None}
+           │    │    └ <PreparedRequest [GET]>
+           │    └ <function Session.send at 0x0000029ECC508A40>
+           └ <requests.sessions.Session object at 0x0000029ECC7D1A50>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        │       │    │          └ {'timeout': None, 'proxies': OrderedDict(), 'stream': False, 'verify': True, 'cert': None}
+        │       │    └ <PreparedRequest [GET]>
+        │       └ <function HTTPAdapter.send at 0x0000029ECC4EFD80>
+        └ <requests.adapters.HTTPAdapter object at 0x0000029ECE15AED0>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+          │                          └ <PreparedRequest [GET]>
+          └ <class 'requests.exceptions.ConnectionError'>
+
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=1323): Max retries exceeded with url: /api/heartbeat (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE1CD6D0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+2023-10-02T14:19:22.963794+0800 | INFO | Waiting 2s...
+2023-10-02T14:19:27.007104+0800 | ERROR | Connection error: HTTPConnectionPool(host='127.0.0.1', port=1323): Max retries exceeded with url: /api/info (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE15E290>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+Traceback (most recent call last):
+
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 203, in _new_conn
+    sock = connection.create_connection(
+           │          └ <function create_connection at 0x0000029ECA608C20>
+           └ <module 'urllib3.util.connection' from 'C:\\Users\\three\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\ur...
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    raise err
+          └ None
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+    │    │       └ ('127.0.0.1', 1323)
+    │    └ <method 'connect' of '_socket.socket' objects>
+    └ <socket.socket [closed] fd=-1, family=2, type=1, proto=0>
+
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+               │    └ <function HTTPConnectionPool._make_request at 0x0000029ECC2A9580>
+               └ <urllib3.connectionpool.HTTPConnectionPool object at 0x0000029ECE15E090>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 496, in _make_request
+    conn.request(
+    │    └ <function HTTPConnection.request at 0x0000029ECC2796C0>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE15E290>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 395, in request
+    self.endheaders()
+    │    └ <function HTTPConnection.endheaders at 0x0000029ECA5899E0>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE15E290>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 1281, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    │    │            │                            └ False
+    │    │            └ None
+    │    └ <function HTTPConnection._send_output at 0x0000029ECA589580>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE15E290>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 1041, in _send_output
+    self.send(msg)
+    │    │    └ b'GET /api/info HTTP/1.1\r\nHost: 127.0.0.1:1323\r\nUser-Agent: python-requests/2.31.0\r\nAccept-Encoding: gzip, deflate\r\nA...
+    │    └ <function HTTPConnection.send at 0x0000029ECA5893A0>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE15E290>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 979, in send
+    self.connect()
+    │    └ <function HTTPConnection.connect at 0x0000029ECC279260>
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE15E290>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 243, in connect
+    self.sock = self._new_conn()
+    │    │      │    └ <function HTTPConnection._new_conn at 0x0000029ECC279120>
+    │    │      └ <urllib3.connection.HTTPConnection object at 0x0000029ECE15E290>
+    │    └ None
+    └ <urllib3.connection.HTTPConnection object at 0x0000029ECE15E290>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 218, in _new_conn
+    raise NewConnectionError(
+          └ <class 'urllib3.exceptions.NewConnectionError'>
+
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x0000029ECE15E290>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\adapters.py", line 486, in send
+    resp = conn.urlopen(
+           │    └ <function HTTPConnectionPool.urlopen at 0x0000029ECC2A9760>
+           └ <urllib3.connectionpool.HTTPConnectionPool object at 0x0000029ECE15E090>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 844, in urlopen
+    retries = retries.increment(
+              │       └ <function Retry.increment at 0x0000029ECA60B920>
+              └ Retry(total=0, connect=None, read=False, redirect=None, status=None)
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+          │             │      │    │            └ NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE15E290>: Failed to establish a new connection: [...
+          │             │      │    └ NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE15E290>: Failed to establish a new connection: [...
+          │             │      └ '/api/info'
+          │             └ <urllib3.connectionpool.HTTPConnectionPool object at 0x0000029ECE15E090>
+          └ <class 'urllib3.exceptions.MaxRetryError'>
+
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=1323): Max retries exceeded with url: /api/info (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE15E290>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "d:\files\VSCode\BYR-Team-Interview\Function.py", line 151, in <module>
+    Code = getCode()  # 获取要提交的Code
+           └ <function getCode at 0x0000029ECE0EF100>
+
+> File "d:\files\VSCode\BYR-Team-Interview\Function.py", line 70, in getCode
+    response = requests.get(f"{Url}/api/info", headers=headers)
+               │        │                              └ {'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzU3NX0.B2N18GrhOo...
+               │        └ <function get at 0x0000029ECC4CE5C0>
+               └ <module 'requests' from 'C:\\Users\\three\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\requests\\__init_...
+
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           │              │           │         └ {'headers': {'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cCI6MTY5NjIyNzU3NX...
+           │              │           └ None
+           │              └ 'http://127.0.0.1:1323/api/info'
+           └ <function request at 0x0000029ECC4CE480>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           │       │              │           │      └ {'params': None, 'headers': {'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR3Vlc3RMaWFuZyIsImV4cC...
+           │       │              │           └ 'http://127.0.0.1:1323/api/info'
+           │       │              └ 'get'
+           │       └ <function Session.request at 0x0000029ECC508540>
+           └ <requests.sessions.Session object at 0x0000029ECE1CD110>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           │    │    │       └ {'timeout': None, 'allow_redirects': True, 'proxies': OrderedDict(), 'stream': False, 'verify': True, 'cert': None}
+           │    │    └ <PreparedRequest [GET]>
+           │    └ <function Session.send at 0x0000029ECC508A40>
+           └ <requests.sessions.Session object at 0x0000029ECE1CD110>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        │       │    │          └ {'timeout': None, 'proxies': OrderedDict(), 'stream': False, 'verify': True, 'cert': None}
+        │       │    └ <PreparedRequest [GET]>
+        │       └ <function HTTPAdapter.send at 0x0000029ECC4EFD80>
+        └ <requests.adapters.HTTPAdapter object at 0x0000029ECE1CF050>
+  File "C:\Users\three\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+          │                          └ <PreparedRequest [GET]>
+          └ <class 'requests.exceptions.ConnectionError'>
+
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=1323): Max retries exceeded with url: /api/info (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029ECE15E290>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+2023-10-02T14:19:27.024928+0800 | INFO | Waiting 2s...
+2023-10-02T14:19:29.025869+0800 | INFO | Code didn't change, waiting 5s...
+2023-10-02T14:19:34.026613+0800 | INFO | Program finished after 5 minutes.

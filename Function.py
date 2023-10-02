@@ -1,10 +1,12 @@
 import requests
 import time
+import loguru
 
 Url = "http://127.0.0.1:1323"
 Token = None
 LastLoginTime = None
-WaitTimeAfter401 = 15
+WaitTimeAfter401 = 15  # code 401后等待15秒
+loguru.logger.add(sink="./runtime.log", format="{time} | {level} | {message}", level="DEBUG")
 
 # 登录
 def Login():
@@ -15,19 +17,20 @@ def Login():
     response = requests.post(f"{Url}/signup", data={"username": UserName})
     if response.status_code == 200:
         PassWord = response.json()["password"]
-        print("Received password:", PassWord)
+        loguru.logger.info(f"Received password: {PassWord}")
     else:
-        print(f"Received status_code {response.status_code}: {response.text}")
-        print("Failed to get password.")
+        loguru.logger.error(f"Received status_code {response.status_code}: {response.text}")
+        loguru.logger.error("Failed to get password.")
         return
 
     response = requests.post(f"{Url}/login", data={"username": UserName, "password": PassWord})
     if response.status_code == 200:
         Token = response.json()["token"]
-        print("Get token successfully:", Token)
+        loguru.logger.info(f"Get token successfully: {Token}")
     else:
-        print(f"Received status code {response.status_code}: {response.text}")
-        print("Login failed")
+        loguru.logger.error(f"Received status code {response.status_code}: {response.text}")
+        loguru.logger.error("Login failed")
+
 
 # Token心跳
 def HeartBeat():
@@ -39,14 +42,15 @@ def HeartBeat():
             if response.status_code == 200:
                 NewToken = response.json()["token"]
                 if NewToken != Token:
-                    print("Token refreshed:", NewToken)
+                    loguru.logger.info(f"Token refreshed: {NewToken}")
                     Token = NewToken
             else:
                 HandleError(response)
         except requests.exceptions.RequestException as e:
-            print(f"Connection error: {e}")
-            print("Waiting 2s...")
+            loguru.logger.exception(f"Connection error: {e}")
+            loguru.logger.info("Waiting 2s...")
             time.sleep(2)  # 等待2秒
+
 
 # 拿一下Code
 def getCode():
@@ -57,15 +61,16 @@ def getCode():
             response = requests.get(f"{Url}/api/info", headers=headers)
             if response.status_code == 200:
                 code = response.json()["code"]
-                print("Received code:", code)
+                loguru.logger.info(f"Received code: {code}")
                 return code
             else:
                 HandleError(response)
         except requests.exceptions.RequestException as e:
-            print(f"Connection error: {e}")
-            print("Waiting 2s...")
+            loguru.logger.exception(f"Connection error: {e}")
+            loguru.logger.info("Waiting 2s...")
             time.sleep(2)  # 等待2秒
     return None
+
 
 # 提交
 def Validate(code):
@@ -75,13 +80,14 @@ def Validate(code):
         try:
             response = requests.post(f"{Url}/api/validate", headers=headers, data={"code": code})
             if response.status_code == 200:
-                print(f"Validation successful. Server response: {response.text}")
+                loguru.logger.info(f"Validation successful. Server response: {response.text}")
             else:
                 HandleError(response)
         except requests.exceptions.RequestException as e:
-            print(f"Connection error: {e}")
-            print("Waiting 2s...")
+            loguru.logger.exception(f"Connection error: {e}")
+            loguru.logger.info("Waiting 2s...")
             time.sleep(2)  # 等待2秒
+
 
 # 处理不同状态码
 def HandleError(response):
@@ -89,40 +95,41 @@ def HandleError(response):
     ErrorMessage = response.text
 
     if StatusCode == 401:
-        if "missing or malformed jwt" in ErrorMessage: # 没加上bearer前缀会出现的
-            print("JWT is missing or malformed")
+        if "missing or malformed jwt" in ErrorMessage:  # 没加上bearer前缀会出现的
+            loguru.logger.error("JWT is missing or malformed")
         elif "invalid or expired jwt" in ErrorMessage:
-            print(f"{StatusCode}: JWT is invalid or expired")
+            loguru.logger.error(f"{StatusCode}: JWT is invalid or expired")
             if LastLoginTime is None or (time.time() - LastLoginTime > WaitTimeAfter401):
                 Login()  # 重新获取令牌
             else:
                 time.sleep(WaitTimeAfter401 - (time.time() - LastLoginTime))  # 等待一段时间
     elif StatusCode == 403:
-        print(f"{StatusCode}: Forbidden")
+        loguru.logger.error(f"{StatusCode}: Forbidden")
     elif StatusCode == 404:
-        print(f"{StatusCode}: Not Found")
+        loguru.logger.error(f"{StatusCode}: Not Found")
     elif StatusCode == 405:
-        print(f"{StatusCode}: Method not allowed")
+        loguru.logger.error(f"{StatusCode}: Method not allowed")
     elif StatusCode == 418:
-        print(f"{StatusCode}: I'm a teapot")
+        loguru.logger.error(f"{StatusCode}: I'm a teapot")
     elif StatusCode == 502:
-        print(f"{StatusCode}: Bad Gateway")
+        loguru.logger.error(f"{StatusCode}: Bad Gateway")
         return False  # 服务可能下线
     else:
-        print(f"Received status code {StatusCode}: {ErrorMessage}")
+        loguru.logger.error(f"Received status code {StatusCode}: {ErrorMessage}")
     return True  # 服务在线
+
 
 if __name__ == "__main__":
     Login()  # 初始登录一次
     LastCode = None
     StartTime = time.time()
-    while time.time() - StartTime < 300: # 5分钟
+    while time.time() - StartTime < 300:  # 5分钟
         HeartBeat()  # 更新Token
         Code = getCode()  # 获取要提交的Code
-        if Code and Code != LastCode: # 有更新才提交
+        if Code and Code != LastCode:  # 有更新才提交
             Validate(Code)  # 提交验证
-            LastCode = Code 
+            LastCode = Code
         else:
-            print("Code didn't change, waiting 5s...")
-        time.sleep(5) # 都等5s
-    print("Program finished after 5 minutes.")
+            loguru.logger.info("Code didn't change, waiting 5s...")
+        time.sleep(5)  # 都等5s
+    loguru.logger.info("Program finished after 5 minutes.")
